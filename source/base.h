@@ -4,12 +4,6 @@
  #define appid "0"
 #endif
 
-#pragma comment(lib, "kernel32")
-#pragma comment(lib, "user32")
-#pragma comment(lib, "shell32")
-
-#pragma comment(linker, "/subsystem:console")
-#pragma comment(linker, "/entry:_start")
 #pragma comment(linker, "/manifestdependency:\"" \
  "type='win32' " \
  "name='Microsoft.Windows.Common-Controls' " \
@@ -18,10 +12,7 @@
  "publicKeyToken='6595b64144ccf1df' " \
  "language='*'\"")
 
-#define _CRT_DECLARE_NONSTDC_NAMES 0
-#define NOMINMAX
-#define UNICODE
-#include <windows.h>
+#include <Windows.h>
 #include <stdbool.h>
 
 _Noreturn void exit(int exit_code)

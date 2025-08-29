@@ -1,22 +1,10 @@
 #define appid "PortableBuildTools"
 #include "base.h"
-#define MINIZ_NO_STDIO
-#define MINIZ_NO_TIME
-#define MINIZ_NO_DEFLATE_APIS
-#define MINIZ_NO_ZLIB_APIS
-#define MINIZ_NO_ZLIB_COMPATIBLE_NAME
-#define MINIZ_NO_MALLOC
-#define NDEBUG
-#include "miniz/miniz.c"
+#include "miniz/miniz.h"
 #include "dialog.h"
 #include <shobjidl_core.h>
 #include <shlwapi.h>
 #include <wininet.h>
-#pragma comment(lib, "ole32.lib")
-#pragma comment(lib, "advapi32.lib")
-#pragma comment(lib, "comctl32.lib")
-#pragma comment(lib, "shlwapi.lib")
-#pragma comment(lib, "wininet.lib")
 #define utf8_to_utf16(str, str_count, wbuf, wbuf_count) \
  MultiByteToWideChar(CP_UTF8, MB_ERR_INVALID_CHARS, str, str_count, wbuf, wbuf_count)
 #define utf16_to_utf8(wstr, wstr_count, buf, buf_count) \
